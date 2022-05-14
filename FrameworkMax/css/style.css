@@ -1,0 +1,376 @@
+body {
+    background-image: url(https://media.istockphoto.com/photos/abstract-futuristic-sci-fi-dark-green-light-room-background-wallpaper-picture-id1038252220?k=20&m=1038252220&s=170667a&w=0&h=AnfgkAkDnwvUawyTiGc8dZbE_cLdh-YkHzwUgA2Xn3g=);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: scroll;
+    background-attachment: fixed;
+    background-color: #ccd0dc;
+    margin: 0px;
+}
+.hide {
+    display: none;
+}
+#app {
+    width: 100%;
+    margin-top: 100px;
+    text-align: center;
+}
+#header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    justify-content: space-between;
+}
+#header > button{
+    position: relative;
+    width: 700px;
+    height: 55px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.showComponent {
+    background: linear-gradient(180deg, rgba(205, 235, 252, 0.301) 0%, rgba(176, 207, 248, 0.07) 100%);
+    border: transparent;
+    border-bottom: 1px solid;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 15px 32px;
+    transition-duration: 0.3s;
+    font-size: 15px;
+}
+.showComponent:hover {
+    background-color: transparent;
+    color: rgb(115, 255, 0);
+}
+#graph2D {
+    position: relative;
+}
+#graph2D > div{
+    text-align: center;
+    float:left
+}
+.canvas {
+    position: relative;
+    margin-left: 150px;
+}
+#canvas {
+    border-radius: 10px;
+}
+#ui {
+    text-align: left;
+    width: 650px;
+    max-height:max-content;
+    position: absolute;
+    left: 900px;
+}
+#addFunction {
+    margin-bottom: 15px;
+    background-color: transparent;
+    border: 1px solid;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 15px 32px;
+    border-radius: 2px;
+    transition-duration: 0.3s;
+}
+#addFunction:hover {
+    background-color: transparent;
+    color: rgb(115, 255, 0);
+}
+.params {
+    margin-bottom: 3px;
+    padding-left: 15px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 3px solid #a1adc7;
+    color: rgb(255, 255, 255);
+    max-width: 75px;
+}
+.params:focus {
+    border-bottom: 3px solid #4df063;
+    box-shadow: 0 4px 4px -4px #93ffb3;
+}
+::-webkit-input-placeholder {
+    color:rgb(255, 255, 255);
+    opacity: 70%;
+    font-size: 12px;
+}
+#delete {
+    background-color: transparent;
+    border: 1px solid;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    border-radius: 2px;
+    width: 74px;
+    margin: 5px 10px 10px 20px;
+}
+#delete:hover {
+    background-color: transparent;
+    color: rgb(115, 255, 0);
+}
+input[class="check2D"] {
+    margin-top: 15px;
+    height: 20px;
+    width: 20px;
+    border: none;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    outline: none;
+    transform: rotate(45deg);
+    -webkit-appearance: none;
+}
+/* input[class="check2D"]:before {
+    position: absolute;
+    content: "";
+    background-color: rgba(255, 255, 255, 0);
+    height: 60%;
+    width: 100%;
+    top: -55%;
+    border-radius: 75px 75px 0 0;
+} */
+/* input[class="check2D"]:after {
+    position: absolute;
+    content: "";
+    background-color: rgba(255, 255, 255, 0);
+    height: 60%;
+    width: 100%;
+    transform: rotate(-90deg);
+    border-radius: 75px 75px 0 0;
+    top: 20%;
+    right: 75%;
+} */
+input[class="check2D"]:checked,
+input:checked[class="check2D"]:before,
+input:checked[class="check2D"]:after {
+    background-color: rgb(115, 255, 0);
+}
+
+.calcInputs {
+    margin-top: 100px;
+}
+.results {
+margin: 40px 0 40px 0;
+}
+.resultNumber {
+    width: 300px;
+    height: 30px;
+    color: rgb(255, 255, 255);
+    outline: none;
+    background-color: rgba(155, 179, 189, 0.17);
+    border-radius: 2px;
+    border-style: solid;
+    border-color: rgb(216, 223, 235);
+}
+.number {
+    width: 250px;
+    height: 30px;
+    outline: none;
+    background-color: rgba(155, 179, 189, 0.17);
+    border: none;
+    border-radius: 2px;
+    border-bottom: solid 2px white;;
+    color: rgb(255, 255, 255);
+    margin-left: 10px;;
+    font-size: 14px;
+}
+.number:focus {
+    border-color: rgb(122, 243, 122);
+}
+.operandButtons {
+    margin: auto;
+    width: 300px;
+    height: 100px;
+}
+.operands {
+    background-color: rgba(155, 179, 189, 0.3);
+    border-color: #ffffff;
+    border: 1px solid;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border-radius: 2px;
+    width: 70px;
+    height: 25px;
+    margin: 5px;
+
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+}
+.operands:hover {
+    /* background-color: white; */
+    color: rgb(147, 245, 155);
+}
+.graph3D {
+    display: inline-flex;
+    position: relative;
+    float: left;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    justify-content: space-between;
+}
+.canvas3D {
+    width: 700px;
+    position: relative;
+}
+#canvas3D {
+    border-radius: 3px;
+}
+.light {
+    padding: 150px 100px 150px 100px;
+    display: inline-block;
+}
+.figures {
+    padding-right: 200px;
+    padding-left: 30px;
+}
+select {
+    background: linear-gradient(180deg, rgba(197, 231, 252, 0.13) 0%, rgba(176, 207, 248, 0.07) 100%);
+    width: 300px;
+    height: 45px;
+    color: rgb(136, 145, 156);
+    outline: none;
+    border: transparent;
+    border-bottom: 1px solid;
+    border-color: rgb(216, 223, 235);
+    text-transform: capitalize;
+    padding-left: 15px;
+    font-size: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    transition-duration: 0.3s;
+}
+select:hover {
+    border-color: #adfdb1;
+    color: #b4fdad;
+}
+select:focus {
+    border-color: #bdfdad;
+    color: #c6fdad;
+}
+option {
+    background-color: #222632;
+}
+.Options3D {
+    display: none;
+}
+.lightSpinning {
+    margin-bottom: 20px;
+    width: 200px;
+    height: 40px;
+}
+.checkingButtonStyle {
+    margin: 0px 5px 0px 5px;
+    padding: 10px 10px 10px 10px;
+    font-size: 18px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(180deg, rgba(128, 206, 255, 0.13) 0%, rgba(106, 170, 255, 0.07) 100%);
+    color: rgb(216, 235, 216);
+    outline: none;
+    border: 1.5px solid;
+    border-radius: 1px;
+    border-color: rgb(216, 235, 216);;
+    position: relative;
+    user-select: none;
+    transition: 0.3s;
+}
+.checkingButtonStyle:hover {
+    color: #00ff40;
+    border-color: #00ff00;
+}
+input[class="Options3D"]:checked + .checkingButtonStyle {
+    color: #00ff40;
+    border-color: #00ff40; 
+    background-color: #b9e3ff1c;
+}
+.allows {
+    margin-top: 20px;
+    height: 50px;
+}
+#powerOfLight {
+    -webkit-appearance: none;
+    background: transparent;
+    height: 0px;
+    outline: none;
+    border: 1px solid #00ff40;
+    border-radius: 9px;
+}
+#powerOfLight::-webkit-slider-thumb {
+    cursor: pointer;
+}
+#colorSelector {
+    margin-top: 20px;
+    margin-bottom: 20px;
+	-webkit-appearance: none;
+	border: none;
+	width: 50px;
+	height: 25px;
+}
+#colorSelector::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+#colorSelector::-webkit-color-swatch {
+	border: none
+}
+#arrow-left {
+	width: 15px;
+	height: 15px;
+	background: transparent;
+	border-top: 3px solid white;
+	border-right: 3px solid white;
+    border-left: none;
+    border-bottom: none;
+    transform: rotate(-135deg);
+}
+#arrow-left:hover {
+    border-color: #adfdb8;
+}
+#arrow-left:active {
+    border-color: #00ff40;
+}
+#arrow-right {
+	width: 15px;
+	height: 15px;
+	background: transparent;
+	border-top: 3px solid white;
+	border-right: 3px solid white;
+    border-left: none;
+    border-bottom: none;
+    transform: rotate(45deg);
+}
+#arrow-right:hover {
+    border-color: #adfdb8;
+}
+#arrow-right:active {
+    border-color: #00ff40;
+}
+.addDelFigureBlock {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+.countOfFigures {
+    width: 150px;
+    padding: 5px 10px 5px 10px;
+    font-size: 18px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(180deg, rgba(128, 206, 255, 0.13) 0%, rgba(106, 170, 255, 0.07) 100%);
+    color: rgb(216, 235, 216);;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid;
+    border-color: rgb(216, 235, 216);
+    transition: 0.3s;
+}
+.countOfFigures:hover {
+    border-color: #adfdb8;
+    color: #adfdb8;
+}
+.countOfFigures:active {
+    border-color: #00ff40;
+    transition: 0.4ms;
+}
